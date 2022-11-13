@@ -18,26 +18,10 @@
             numberView.innerText = numbers
 
             function plus() {
-                numbers += 1
-                numberView.innerText = numbers
-                //if(numbers >= 100) {
-                    //document.body.style.backgroundColor = "red"
-                    //noticeView.innerText = "위험"
-                //}else{
-                    //document.body.style.backgroundColor = "blue"
-                    //noticeView.innerText = "안전"
-                //}
+                numberView.innerText = parseInt(numberView.innerText) + 1
             }
             function minus() {
-                numbers -= 1
-                numberView.innerText = numbers
-                //f(numbers >= 100) {
-                    //document.body.style.backgroundColor = "red"
-                    //noticeView.innerText = "위험"
-                //}else{
-                    //document.body.style.backgroundColor = "blue"
-                    //noticeView.innerText = "안전"
-                //}
+                numberView.innerText -= 1
             }
             
             plusBtn.addEventListener("click", plus)
