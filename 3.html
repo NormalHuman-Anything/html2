@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>js활용 test</title>
+    </head>
+    <body>
+        <h1 class = "number">0</h1>
+        <button class = "plus">+</button>
+        <button class = "minus">-</button> 
+
+        <script>
+            let numberView = document.querySelector(".number")
+            let plusBtn = document.querySelector(".plus")
+            let minusBtn = document.querySelector(".minus")
+
+            let numbers = 100
+
+            numbers = numberView.textContent
+            numberView.innerText = numbers
+
+            function plus() {
+                numbers += 1
+                numberView.innerText = numbers
+                //if(numbers >= 100) {
+                    //document.body.style.backgroundColor = "red"
+                    //noticeView.innerText = "위험"
+                //}else{
+                    //document.body.style.backgroundColor = "blue"
+                    //noticeView.innerText = "안전"
+                //}
+            }
+            function minus() {
+                numbers -= 1
+                numberView.innerText = numbers
+                //f(numbers >= 100) {
+                    //document.body.style.backgroundColor = "red"
+                    //noticeView.innerText = "위험"
+                //}else{
+                    //document.body.style.backgroundColor = "blue"
+                    //noticeView.innerText = "안전"
+                //}
+            }
+            
+            plusBtn.addEventListener("click", plus)
+            minusBtn.addEventListener("click", minus)
+            
+        </script>
+    </body>
+</html>
