@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let car={
+                name: "rcar",
+                owner: "human",
+                speed: 30,
+                spdUp: function() {
+                    let up = parseInt(prompt("속도 입력 : "))
+                    this.speed += up
+                },
+                spdDown: function() {
+                    let down = parseInt(prompt("속도 입력 : "))
+                    this.speed -= down
+                },
+                spdCheck: function() {
+                    console.log(this.speed)
+                }
+
+            }
+        </script>
+    </body>
+</html>
