@@ -2,15 +2,114 @@
     <head>
         <title>자바스크립트 연습</title>
     </head>
-    <body>
-
+    <body>  
+        <h1>1</h1>
+        <H2>몬스터 체력</H2>
+        
+        <button id="attackBtn">공격</button>
+        <button id="searBtn">분석</button>
+        <button id="runBtn">도망</button>
         <script>
+            let attackBtn = document.querySelector("#attackBtn");
+            let searBtn = document.querySelector("#searchBtn");
+            let runBtn = document.querySelector("#runBtn");
+
+
+            let p = document.querySelector("p")
+            function attackbtnclicked() {
+                monster.HP -= (myCharacter.attack - monster.def)
+            }
+
+            function searchBtnClicked(){
+                p.innerText = `몬스터의 이름은 ${monster.name}입니다.`
+            }
+
+            function runBtnClicked(){
+
+            }
+
             //1부터 10까지의 수 중 짝수만 출력
+            /*
             for(let i = 1; i<=10; i++) {
                 if(i%2 == 0) {
                     console.log(i)
                 }
             }
+            */
+            /*
+            function add(a, b) {
+                return a+b
+            }
+
+            let age1 = 100
+            let phoneNumber1 = "010-1234-5678"
+
+            let names = ['A', 'B', 'C']
+            let ages = [1,2,3]
+            let address = ["울산", "부산", "서울"]
+
+            let person1 = {
+                name: "이원준",
+                age: 30,
+                address: "울산",
+                say: function () {
+                    console.log("안녕하세요")
+                }
+            }
+            */
+            /*
+                myCharacter 라는 객체
+                1. 가지고 있는 정보는 아래와 같습니다.
+                    캐릭터 이름, 직업 이름, 레벨, 방어력, 공격력, HP(체력), 경험치
+                2. 정보는 prompt 를 통해서 입력을 받습니다.
+                3. 실행 시 경험치를 5 얻는 함수
+                    실행 시 자신의 체력을 자신의 공격력만큼 감소 시키는 함수
+                    캐릭터의 정보를 출력해주는 함수
+                4. 경험치가 100이상이 되었을 때는 레벨을 1 올려주고 경험치를 0으로 만들어주는 기능
+            */
+           
+            
+            let myCharacter = {
+                name: prompt("이름 입력 : "),
+                jobName: prompt("직업 이름 입력 : "),
+                level: parseInt(prompt("레벨 입력 : ")),
+                protLv: parseInt(prompt("보호 레벨 입력 : ")),
+                attackpwr: parseInt(prompt("공격 세기 입력 : ")),
+                HP: parseInt(prompt("체력 입력 : ")),
+                exp: parseInt(prompt("경험치 입력 : ")),
+                
+                getExp: function() {
+                    this.exp+=5
+                    myCharacter.checkExp()
+                },
+                attack: function() {
+                    console.log("공격! 체력 감소 : " + monster.hp + " -> " + monster.hp-(this.attackpwr-monster.def))
+                    monster.hp-=(this.attackpwr-monster.def)
+                    if(monster.hp<=0){
+                        this.exp+=monster.killExp
+                        console.log("처치! 경험치 " + monster.killExp + "만큼 증가!")
+                    }
+                },
+                printStat: function() {
+                    console.log("이름 : " + this.name + "\n" + "직업 이름 : " + this.jobName + "\n" + "체력 : " + this.HP + "\n" + "경험치 : " + this.exp + "\n" + "레벨 : " + this.level + "\n" + "방어 레벨 : " + this.protLv + "\n" + "공격 세기 : " + this.attackpwr + "\n")
+                },
+                checkExp: function() {
+                    if(this.exp>=100){
+                        this.exp=0
+                        this.level++
+                        console.log("레벨 상승! " + this.level)
+                    }
+                }
+            }
+
+            let monster = {
+                name: "드래곤",
+                atk: 50,
+                def: 10,
+                hp: 100,
+                killExp: 50
+            }
+            
         </script>
     </body>
 </html>
